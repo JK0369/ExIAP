@@ -9,10 +9,9 @@ import UIKit
 import StoreKit
 
 class ViewController: UIViewController {
-  /// 앱을 재설치 하고난 후 이 버튼을 누르면 이전에 구매했던 항목 불러오기 기능
   private let restoreButton: UIButton = {
     let button = UIButton()
-    button.setTitle("복구 버튼", for: .normal)
+    button.setTitle("구매 목록 불러오기 버튼", for: .normal)
     button.setTitleColor(.systemBlue, for: .normal)
     button.setTitleColor(.blue, for: .highlighted)
     button.addTarget(self, action: #selector(restore), for: .touchUpInside)
