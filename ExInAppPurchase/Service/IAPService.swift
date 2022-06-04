@@ -11,7 +11,7 @@ import StoreKit
 // 외부에서 productsCompletion를 통해 데이터 획득
 // 내부에서는 completion을 가지고 있다가, delegate에서 completion을 호출
 
-// 2. SKPaymentQueue라는 큐를 사용하여 request 처리
+// 2. SKPaymentQueue라는 큐를 사용하여 데이터를 가져오기 처리
 // 구입 - SKPaymentQueue.default().add()
 // 복구 - SKPaymentQueue.default().restoreCompletedTransactions()
 // payments가 가능한지 확인 - SKPaymentQueue.canMakePayments()
@@ -21,7 +21,7 @@ typealias ProductsRequestCompletion = (_ success: Bool, _ products: [SKProduct]?
 protocol IAPServiceType {
   var canMakePayments: Bool { get }
   
-  func requestProducts(completion: @escaping ProductsRequestCompletion)
+  func getProducts(completion: @escaping ProductsRequestCompletion)
   func buyProduct(_ product: SKProduct)
   func isProductPurchased(_ productID: String) -> Bool
   func restorePurchases()
@@ -41,7 +41,7 @@ final class IAPService: NSObject, IAPServiceType {
     self.productIDs = productIDs
   }
   
-  func requestProducts(completion: @escaping ProductsRequestCompletion) {
+  func getProducts(completion: @escaping ProductsRequestCompletion) {
     self.productsRequest?.cancel()
     self.productsCompletion = completion
     self.productsRequest = SKProductsRequest(productIdentifiers: self.productIDs)

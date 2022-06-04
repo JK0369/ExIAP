@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     self.tableView.dataSource = self
     
-    MyProducts.iapService.requestProducts { [weak self] success, products in
+    MyProducts.iapService.getProducts { [weak self] success, products in
       print("load products \(products ?? [])")
       guard let ss = self else { return }
       if success, let products = products {

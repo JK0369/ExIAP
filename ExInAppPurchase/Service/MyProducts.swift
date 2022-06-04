@@ -9,13 +9,9 @@ import Foundation
 
 enum MyProducts {
   static let productID = "com.jake.sample.ExInAppPurchase.shopping"
-  static let iapService = IAPService(productIDs: Set<String>([productID]))
+  static let iapService: IAPServiceType = IAPService(productIDs: Set<String>([productID]))
   
   static func getResourceProductName(_ id: String) -> String? {
     id.components(separatedBy: ".").last
   }
-}
-
-func resourceNameForProductIdentifier(_ productIdentifier: String) -> String? {
-  return productIdentifier.components(separatedBy: ".").last
 }
