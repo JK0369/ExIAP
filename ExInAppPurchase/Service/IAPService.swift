@@ -34,6 +34,7 @@ final class IAPService: NSObject, IAPServiceType {
       .filter { UserDefaults.standard.bool(forKey: $0) == true }
     
     super.init()
+    SKPaymentQueue.default().add(self)
   }
   
   func getProducts(completion: @escaping ProductsRequestCompletion) {
