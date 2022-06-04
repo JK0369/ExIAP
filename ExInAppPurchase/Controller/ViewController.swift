@@ -62,10 +62,27 @@ class ViewController: UIViewController {
         }
       }
     }
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(handlePurchaseNoti(_:)),
+      name: .iapServicePurchaseNotification,
+      object: nil
+    )
   }
   
   @objc private func restore() {
     MyProducts.iapService.restorePurchases()
+  }
+  
+  @objc private func handlePurchaseNoti(_ notification: Notification) {
+    guard
+      let productID = notification.object as? String,
+      let index = self.products.firstIndex(where: { $0.productIdentifier == productID })
+    else { return }
+    
+    self.tableView.reloadRows(at: [IndexPath(index: index)], with: .fade)
+    self.tableView.performBatchUpdates(nil, completion: nil)
   }
 }
 

@@ -16,6 +16,7 @@
 		4A0E374C284B2005009913CF /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E374B284B2005009913CF /* IAPService.swift */; };
 		4A0E374E284B2B08009913CF /* MyProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E374D284B2B08009913CF /* MyProducts.swift */; };
 		4A0E3754284B3257009913CF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E3753284B3257009913CF /* ProductCell.swift */; };
+		4A0E3756284B4CFA009913CF /* IAPService+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E3755284B4CFA009913CF /* IAPService+Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4A0E374B284B2005009913CF /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		4A0E374D284B2B08009913CF /* MyProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProducts.swift; sourceTree = "<group>"; };
 		4A0E3753284B3257009913CF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		4A0E3755284B4CFA009913CF /* IAPService+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IAPService+Notification.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				4A0E374B284B2005009913CF /* IAPService.swift */,
+				4A0E3755284B4CFA009913CF /* IAPService+Notification.swift */,
 				4A0E374D284B2B08009913CF /* MyProducts.swift */,
 			);
 			path = Service;
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0E3756284B4CFA009913CF /* IAPService+Notification.swift in Sources */,
 				4A0E373C284A105C009913CF /* ViewController.swift in Sources */,
 				4A0E3738284A105C009913CF /* AppDelegate.swift in Sources */,
 				4A0E374E284B2B08009913CF /* MyProducts.swift in Sources */,
